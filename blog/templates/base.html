@@ -29,7 +29,7 @@
           <li><a href="/">Home</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          {% if name %}
+          {% if session.get('username') %}
             <li><a href="#">{{name}}</a></li>
           {% else %}
             <li><a href="#">总统</a></li>
@@ -49,9 +49,17 @@
 {% endblock %}
 
 {% block content %}
+  <!-- 背景图片 -->
   <div class="m-bg">
     <div class="bg-1">54654654564564</div>
   </div>
+  <!-- flash消息提醒 -->
+  {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning">
+      <button class="close" data-dismiss="alert" type="button" role="Close"><span aria-hidden="true">&times;</span></button>
+      {{message}}
+    </div>
+  {% endfor %}
   <div class="container">
     {% block page_content %}{% endblock %}
   </div>

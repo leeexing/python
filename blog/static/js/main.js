@@ -1,1 +1,3 @@
-console.log('Woooooo~!')
+$(function() {
+  console.log(7788)
+})
