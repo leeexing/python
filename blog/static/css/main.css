@@ -1,0 +1,43 @@
+.show {
+  display: block !important;
+}
+.element {
+  display: block !important;
+}
+.clearfix:before,
+.clearfix:after {
+  content: ' ';
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.logo {
+  color: #f90;
+  font-size: 22px;
+}
+.m-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.2);
+}
+.m-bg .bg-1 {
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/banner-05.jpg);
+  background-position: center;
+  background-size: cover;
+  z-index: -1;
+}
+.m-login {
+  width: 60%;
+  margin: 50px auto;
+  padding: 30px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px #ddd;
+}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+<!-- {% block title %}Leeing's Blog{% endblock %} -->
+
+{% block page_content %}
+  <div class="page-header">
+    {% if name %}
+    <h1>Hello {{name}}, today is a good day</h1>
+    {% else %}
+    <h1>Hello stranger, today is a good day</h1>
+    {% endif %}
+    <p class="logo">我的考卷</p>
+  </div>
+{% endblock %}

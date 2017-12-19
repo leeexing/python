@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+<!-- {% block title %}Leeing's Blog{% endblock %} -->
+
+{% block page_content %}
+  <div class="m-login">
+    <form>
+        <div class="form-group">
+          <label for="suername">Username</label>
+          <input type="email" class="form-control" id="suername" placeholder="username">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Password">
+        </div>
+        <div class="form-group">
+          <label for="repassword">Repassword</label>
+          <input type="password" class="form-control" id="repassword" placeholder="Password">
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Check me out
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+      </form>
+  </div>
+{% endblock %}
