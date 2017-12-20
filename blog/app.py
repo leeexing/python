@@ -1,13 +1,10 @@
 '''
 my blog
 '''
-from flask import Flask, render_template, redirect, url_for, flash, request, session
+from flask import Flask, render_template, redirect, url_for, flash, request, session, g
 from flask_bootstrap import Bootstrap
-import pymongo
+import server.db as db
 import os
-
-client = pymongo.MongoClient('localhost', 27017)
-user_db = client['myblog']['users']
 
 app = Flask(__name__)
 bootstrap = Bootstrap(app)
@@ -22,10 +19,24 @@ def page_not_found(e):
 def internal_server_error(e):
     return render_template('500.html'), 500
 
+@app.before_request
+def my_before_request():
+    if not session.get('username') and request.endpoint not in ('login', 'register', 'static'):
+        return redirect(url_for('login'))
+
 @app.route('/')
 def index():
     username = session.get('username')
-    return render_template('index.html')
+    return render_template('index.html', username=username)
+
+@app.route('/get')
+def get_user():
+    print(request.endpoint)
+    print(request.endpoint in ('login', 'get', 'static'))
+    username = session.get('username')
+    param = request.args #获取get参数
+    print(param)
+    return render_template('user.html', name=username)
 
 @app.route('/user/<name>', methods=['GET'])
 def user(name=None):
@@ -38,7 +49,7 @@ def register():
         password = request.form.get('password')
         print(username)
         print(password)
-        user_isexist = user_db.find_one({'username': username})
+        user_isexist = db.user_db.find_one({'username': username})
         print(user_isexist)
         if user_isexist:
             flash('该用户名已被注册，请换一个用户名注册！')
@@ -50,7 +61,7 @@ def register():
                 'isAdmin': False
             }
             session['username'] = username
-            user_db.insert(new_user)
+            db.user_db.insert(new_user)
             return redirect(url_for('login'))
     else:
         return render_template('login/register.html')
@@ -60,10 +71,12 @@ def login():
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
-        has_user = user_db.find_one({'username': username, 'password': password})
-        print(has_user)
-        if has_user:
+        login_user = db.user_db.find_one({'username': username, 'password': password})
+        print(login_user)
+        if login_user:
             session['username'] = username
+            if login_user.get('isAdmin'):
+                session['isAdmin'] = True
             return redirect(url_for('index'))
         else:
             flash('用户名或密码错误！')
@@ -71,6 +84,10 @@ def login():
     else:
         return render_template('login/login.html')
 
+@app.route('/logout')
+def logout():
+    session.pop('username')
+    return redirect(url_for('login'))
 
 if __name__ == "__main__":
     # app.run()
