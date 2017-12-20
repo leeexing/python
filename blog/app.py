@@ -5,11 +5,14 @@ from flask import Flask, render_template, redirect, url_for, flash, request, ses
 from flask_bootstrap import Bootstrap
 import server.db as db
 import os
+from datetime import timedelta
 
 app = Flask(__name__)
 bootstrap = Bootstrap(app)
 
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY') or 'hard to guess string'
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=1)
+# session.permanent = True
 
 @app.errorhandler(404)
 def page_not_found(e):
@@ -47,10 +50,7 @@ def register():
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
-        print(username)
-        print(password)
         user_isexist = db.user_db.find_one({'username': username})
-        print(user_isexist)
         if user_isexist:
             flash('该用户名已被注册，请换一个用户名注册！')
             return render_template('login/register.html')
@@ -69,14 +69,17 @@ def register():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
+        print(request.values)
         username = request.form.get('username')
         password = request.form.get('password')
+        remember_me = request.form.get('rememberme') == 'on'
+        print(remember_me)
         login_user = db.user_db.find_one({'username': username, 'password': password})
         print(login_user)
         if login_user:
             session['username'] = username
             if login_user.get('isAdmin'):
-                session['isAdmin'] = True
+                session['is_admin'] = True
             return redirect(url_for('index'))
         else:
             flash('用户名或密码错误！')
@@ -86,7 +89,7 @@ def login():
 
 @app.route('/logout')
 def logout():
-    session.pop('username')
+    session.clear()
     return redirect(url_for('login'))
 
 if __name__ == "__main__":
