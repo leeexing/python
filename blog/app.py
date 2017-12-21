@@ -12,7 +12,7 @@ bootstrap = Bootstrap(app)
 
 app.config['SECRET_KEY'] = os.urandom(24)
 # app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY') or 'hard to guess string'
-app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(seconds=120)
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=1)
 # session.permanent = True
 
 @app.errorhandler(404)
@@ -100,5 +100,5 @@ def about():
     return render_template('about.html')
 
 if __name__ == "__main__":
-    # app.run()
-    app.run(debug=True)
+    app.run()
+    # app.run(debug=True)
