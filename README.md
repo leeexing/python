@@ -23,6 +23,8 @@
     session.get(key) -- 获取
     seesion.pop(key) -- 删除某个键值
     session.clear() -- 清除
+    机制：
+      * 把敏感数据经过加密后放入`session`中，然后再把`session`存放到cookie中，下次请求的时候，再从浏览器发送过来的cookie中读取session，然后再从session中读取敏感信息，并进行解密，获取最终的用户数据
 
 2、如果没有指定时间，那么浏览器关闭那么session就自动结束
     session.permanent = True -- 设置过期时间为31天

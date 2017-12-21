@@ -10,8 +10,9 @@ from datetime import timedelta
 app = Flask(__name__)
 bootstrap = Bootstrap(app)
 
-app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY') or 'hard to guess string'
-app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=1)
+app.config['SECRET_KEY'] = os.urandom(24)
+# app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY') or 'hard to guess string'
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(seconds=120)
 # session.permanent = True
 
 @app.errorhandler(404)
@@ -76,6 +77,8 @@ def login():
         print(remember_me)
         login_user = db.user_db.find_one({'username': username, 'password': password})
         print(login_user)
+        if remember_me:
+            session.permanent = True
         if login_user:
             session['username'] = username
             if login_user.get('isAdmin'):
@@ -91,6 +94,10 @@ def login():
 def logout():
     session.clear()
     return redirect(url_for('login'))
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 if __name__ == "__main__":
     # app.run()

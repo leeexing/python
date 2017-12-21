@@ -27,6 +27,8 @@
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <li><a href="/">Home</a></li>
+          <li><a href="/artical">Article</a></li>
+          <li><a href="/about">About</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           {% if session.get('username') %}
@@ -65,9 +67,12 @@
       {{message}}
     </div>
   {% endfor %}
-  <div class="container">
-    {% block page_content %}{% endblock %}
-  </div>
+
+  {% block main %}
+    <div class="container">
+      {% block page_content %}{% endblock %}
+    </div>
+  {% endblock %}
 {% endblock %}
 
 {% block scripts %}

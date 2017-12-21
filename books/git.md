@@ -23,6 +23,6 @@
 4、获取分支
     git branch
 5、删除分支
-    git checkout -d branchname
+    git branch -D branchname
 6、合并分支时产生冲突
     git status  |  git mergetool  |  手动解决冲突地方  |  git status  |  git merge branchname
