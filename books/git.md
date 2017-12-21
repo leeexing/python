@@ -26,3 +26,23 @@
     git branch -D branchname
 6、合并分支时产生冲突
     git status  |  git mergetool  |  手动解决冲突地方  |  git status  |  git merge branchname
+
+## 标签
+    tag就像是一个里程碑一个标志一个点，branch是一个新的征程一条线；
+    tag是静态的，branch要向前走；
+      * git tag分为两种类型：轻量tag 和 附注tag。轻量tag是指向提交对象的引用，附注tag则是仓库中的一个独立的对象  |  建议使用附注Tag
+1、新建tag
+    git tag v0.1.1  |  不需要传递参数
+    git tag -a v0.1.2 -m '0.1.2版本'  |  需指定tag类型
+2、切换标签
+    git checkout tagname
+3、查看tag
+    git show tagname
+    git tag
+4、删除tag
+    git tag -d tagname
+5、给指定的commit打tag
+    git tag -a v0.1.1 9fbc360
+6、tag推送到服务器
+    git push origin tagname
+    git push --tags
