@@ -1,0 +1,20 @@
+@keyframes rotate50 {
+  50% {
+    transform: translate(-50%, -85%) rotate(180deg);
+  }
+  100% {
+    transform: translate(-50%, -85%) rotate(360deg);
+  }
+}
+
+@keyframes cursoring {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

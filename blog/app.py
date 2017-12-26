@@ -100,5 +100,5 @@ def about():
     return render_template('about.html')
 
 if __name__ == "__main__":
-    app.run()
-    # app.run(debug=True)
+    # app.run(host='192.168.191.1')
+    app.run(debug=True)
