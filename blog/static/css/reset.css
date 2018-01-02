@@ -18,10 +18,7 @@ table { border-collapse:collapse; }
 table,tr,td{ border:none;}
 /*td{ border-left:1px solid; border-bottom:1px solid;}*/
 body {background:#fff;color:#555; font:14px/20px "Microsoft YaHei","微软雅黑", "宋体", Arial, "Times New Roman"; }
-.clearfix:after { content:"."; display:block; height:0; visibility:hidden; clear:both; }
-.clearfix { zoom:1; }
-.clearit { clear:both; height:0; font-size:0; overflow:hidden; }
-a{ color:#333; text-decoration:none; cursor: pointer;}
+a,a:hover{ color:#333; text-decoration:none; cursor: pointer;}
 b{font-weight: normal;}
 i{font-style: normal;}
 input[type="text"],input[type="password"],input[type="number"],input[type="button"]{-webkit-appearance:none;appearance:none;outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0);}
@@ -30,10 +27,8 @@ hr{margin:0;}
 	content:".";display:block;height:0;clear:both;visibility:hidden
 }
 .clearfix {
-	display:inline-block
-}
-.clearfix {
-	display:block
+  display:block;
+  zoom: 1;
 }
 
 /*常用的几个css样式 简写*/

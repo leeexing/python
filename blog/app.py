@@ -99,6 +99,14 @@ def logout():
 def about():
     return render_template('about.html')
 
+@app.route('/article')
+def article_list():
+    return render_template('article/article_list.html')
+
+@app.route('/article/:id')
+def article_detail():
+    return render_template('article/article_detail.html')
+
 if __name__ == "__main__":
     # app.run(host='192.168.191.1')
     app.run(debug=True)
