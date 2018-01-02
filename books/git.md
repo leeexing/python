@@ -46,3 +46,39 @@
 6、tag推送到服务器
     git push origin tagname
     git push --tags
+
+## 删除文件&文件夹
+1、删除raindow文件夹及其下所有的文件
+    git rm raindow -r -f | 
+2、删除 index.html 文件
+    git rm index.html
+
+## 下载指定分支
+1、使用Git下载指定分支命令为：git clone -b 分支名仓库地址
+
+## 版本回退
+
+1、git log   |  git log --pretty=online
+2、git reflog
+3、git reset --hard commit_id
+4、git reset --hard HEAD^
+5、git revert HEAD | git revert HEAD~0、1/2
+
+## window下git使用问题
+
+在windows中使用git签出项目的时候
+
+warning: Your console font probably doesn't support Unicode. If you experience strange characters in the output, consider switching to a TrueType font such as Lucida Console!
+
+应该是字符不对，所以在粘贴之前先修改一下字符，
+
+用这个命令：$ git config --global core.autocrlf true，完了就可以下载成功
+
+## git项目中存在子项目 不能提交的问题
+    例如：github pages hexo next 主题不能提交到 github 对应的博客项目里面
+    造成的问题：next 主题里面的一些配置不能同步提交到 github。如果将本地项目删除了，主体又做了很多的修改，无法通过
+    远程仓库恢复，再配置就比较麻烦
+
+## 如何检测 当前分支与远程分支存在追踪关系
+    如何查看当前分支如temp，track到的是远程代码库的哪个分支呀？
+    git config -l | grep 'branch\.temp'
