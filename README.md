@@ -1,3 +1,6 @@
+> "What I cannot create, I do not understand."
+> -- Richard Feynman
+
 ## python
     created by leeing on 2017/12/19
     主要目的：
