@@ -62,6 +62,8 @@ os.path.split()函数返回一个路径的目录名和文件名。
 
 os.path.isfile()和os.path.isdir()函数分别检验给出的路径是一个文件还是目录。
 
+ os.path.splitext(path)  分离文件名与扩展名;默认返回(fname,fextension)元组,可做分片操作 
+
 os.path.existe()函数用来检验给出的路径是否真地存在
 
 os和os.path模块
