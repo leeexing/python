@@ -159,3 +159,18 @@ warning: Your console font probably doesn't support Unicode. If you experience s
 
     如何查看当前分支如temp，track到的是远程代码库的哪个分支呀？
     git config -l | grep 'branch\.temp'
+
+
+## git log
+
+### 1、git log
+
+### 2、git log -p -2
+
+### 3、git log --stat
+
+```js
+在做代码审查，或者要快速浏览其他协作者提交的更新都作了哪些改动时，就可以用这个选项。此外，还有许多摘要选项可以用，比如 --stat，仅显示简要的增改行数统计：
+```
+
+### 4、git log --pretty=oneline

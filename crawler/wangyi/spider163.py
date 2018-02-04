@@ -49,14 +49,12 @@ def save_music(item):
         
 def main():
     # urls = ['https://music.douban.com/artists/genre_page/{}/{}'.format(cate, indx) for cate in range(1, 2) for indx in range(1,2)]
-    for cate in range(1, 8):
-        for index in range(1, 6):
-            get_music('https://music.douban.com/artists/genre_page/{}/{}'.format(cate, index), cate)
-            time.sleep(1)
-    # print(music_arr)
-    for item in music_arr:
-        save_music(item)
-    
+    content = requests.get('http://124.202.164.16/files/3216000009F0694B/m10.music.126.net/20170324152218/0b9ee6cb89c65921ad956fe86768cc49/ymusic/513b/e87e/3360/b872f9d143b44d35a21ef404f75b884a.mp3').content
+    http://124.202.164.4/files/420800000B0DD043/m7.music.126.net/20171130092709/1b2cb0e77d693e68916001587e64273d/ymusic/a623/a974/c01d/a5097d2488bff76ffe34d4d75791f4e7.mp3
+    http://m10.music.126.net/20180129204057/6f3a8569d576c5d2b581fff3c5da8307/ymusic/a623/a974/c01d/a5097d2488bff76ffe34d4d75791f4e7.mp3
+    # print(content)
+    with open('1.mp3', 'wb') as f:
+        f.write(content)
 
 if __name__ == "__main__":
     main()
