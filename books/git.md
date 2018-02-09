@@ -160,7 +160,6 @@ warning: Your console font probably doesn't support Unicode. If you experience s
     如何查看当前分支如temp，track到的是远程代码库的哪个分支呀？
     git config -l | grep 'branch\.temp'
 
-
 ## git log
 
 ### 1、git log
