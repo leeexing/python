@@ -1332,3 +1332,66 @@ Unable to read VR Path Registry from C:\Users\lixing1\AppData\Local\openvr\openv
 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
 
 1518143733574	geckodriver::marionette	ERROR	Failed to kill browser process
+1518146659537	geckodriver	INFO	geckodriver 0.19.1
+1518146659555	geckodriver	INFO	Listening on 127.0.0.1:63113
+1518146662549	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-profile" "C:\\Users\\lixing1\\AppData\\Local\\Temp\\rust_mozprofile.FZfnFcyCrcTb"
+1518146665060	Marionette	INFO	Enabled via --marionette
+1518146667487	Marionette	INFO	Listening on port 63129
+1518146667776	Marionette	WARN	TLS certificate errors will be ignored for this session
+1518146930549	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+Unable to read VR Path Registry from C:\Users\lixing1\AppData\Local\openvr\openvrpaths.vrpath
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+JavaScript error: http://pk.anjianba.cn/static/js/vendor.d53afbf763bc8dfdd954.js, line 16: TypeError: can't redefine non-configurable property "translateX"
+Unable to read VR Path Registry from C:\Users\lixing1\AppData\Local\openvr\openvrpaths.vrpath
+[Parent 17416, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 12120, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Unable to read VR Path Registry from C:\Users\lixing1\AppData\Local\openvr\openvrpaths.vrpath
+[Child 12608, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 12608, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Unable to read VR Path Registry from C:\Users\lixing1\AppData\Local\openvr\openvrpaths.vrpath
+[Child 19308, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 19308, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346

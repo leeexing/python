@@ -63,12 +63,13 @@ while (match < 10000):
             time.sleep(0.2)
     
     i = 0
-    click_index = 0
+    # wait.until(EC.visibility_of_element_located((By.CLASS_NAME, "dr-image")))
     wait.until(EC.presence_of_element_located((By.CLASS_NAME, "dr-image")))
     wait.until(EC.presence_of_element_located((By.CLASS_NAME, "a_btn_safe")))
     wait.until(EC.presence_of_element_located((By.CLASS_NAME, "a_btn_danger")))
     my_choose = []
     ret_in_page = []
+    time.sleep(3)
     for i in range(10):
         found = False
         while (not found):
@@ -83,21 +84,17 @@ while (match < 10000):
         my_choice = None
         
         while (not jianzhuang):
-            if i > click_index:
-                print('点击事件滞后了。i: {} - click_index: {}'.format(i, click_index))
             try:
                 if random.random() < 0.5:
                     # safe_btn = driver.find_element_by_class_name("a_btn_safe")
                     safe_btn = wait.until(EC.presence_of_element_located((By.CLASS_NAME, "a_btn_safe")))
                     safe_btn.click()
-                    click_index += 1
                     my_choice = 'safe'
                     my_choose.append('safe')
                 else:
                     # danger_btn = driver.find_element_by_class_name("a_btn_danger")
                     danger_btn = wait.until(EC.presence_of_element_located((By.CLASS_NAME, "a_btn_danger")))
                     danger_btn.click()
-                    click_index += 1
                     my_choice = 'danger'
                     my_choose.append('danger')
                 jianzhuang = True
