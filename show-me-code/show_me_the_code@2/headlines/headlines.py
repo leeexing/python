@@ -1,5 +1,8 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
+"""
+获取某个 RSS 的相关新闻 & 获取某地的天气；通过 index.html 展现出来
+"""
 
 import datetime
 import requests
@@ -33,8 +36,11 @@ def get_value_with_fallback(key):
 
 @app.route('/')
 def index():
+    print('cookie信息 {}'.format(request.cookies())
     publication = get_value_with_fallback('publication')
     city = get_value_with_fallback('city')
+    print('='*30)
+    print(city)
 
     weather = get_weather(city)
     articles = get_news(publication)
@@ -50,11 +56,11 @@ def index():
 
 def get_news(publication):
     feed = feedparser.parse(RSS_FEED[publication])
-    print(feed)
+    # print(feed)
     return feed['entries']
 
 def get_weather(city):
-    code = WEATHERS.get('city', '101010100')
+    code = WEATHERS.get(city, '101010100')
     url = "http://www.weather.com.cn/data/sk/{0}.html".format(code)
 
     r = requests.get(url)
@@ -69,3 +75,18 @@ def get_weather(city):
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
+""""
+Response.set_cookie(
+    key, //键
+    value='', //值
+    max_age=None, //秒为单位的cookie寿命，None表示http-only
+    expires=None, //失效时间，datetime对象或unix时间戳
+    path='/', //cookie的有效路径
+    domain=None, //cookie的有效域
+    secure=None, 
+    httponly=False)
+
+"""
