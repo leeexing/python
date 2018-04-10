@@ -13,8 +13,9 @@ ANGRY_ASCII ="""
      YOU SHOULDN'T BE HERE
 """
 
-from random import randint, sample
-from functools import reduce
+import threading
+
+def run(number)
 
 
 

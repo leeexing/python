@@ -3,16 +3,25 @@ my blog
 '''
 from flask import Flask, render_template, redirect, url_for, flash, request, session, g
 from flask_bootstrap import Bootstrap
-import server.db as db
+from db import get_mongo_connection
 import os
 from datetime import timedelta
 
-app = Flask(__name__)
-bootstrap = Bootstrap(app)
+app = Flask(__name__, instance_relative_config=True)
+app.config.from_object('config')
+app.config.from_pyfile('config.py')
+print(app.config['DEBUG'])
+print(app.config['SECRET_KEY'])
+print(app.config['MONGO_URI'])
 
-app.config['SECRET_KEY'] = os.urandom(24)
+bootstrap = Bootstrap(app)
+db = get_mongo_connection().user
+
+
+
+# app.config['SECRET_KEY'] = os.urandom(24)
 # app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY') or 'hard to guess string'
-app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=1)
+# app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=1)
 # session.permanent = True
 
 @app.errorhandler(404)
@@ -108,5 +117,4 @@ def article_detail():
     return render_template('article/article_detail.html')
 
 if __name__ == "__main__":
-    # app.run(host='192.168.191.1')
-    app.run(debug=True)
+    app.run()

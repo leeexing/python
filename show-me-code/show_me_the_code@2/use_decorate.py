@@ -18,7 +18,7 @@ print([fib(n) for n in range(10)])
 
 # 这里没有进行优化的情况下，打印n=40的时候需要 150s左右。所以我们考虑加一个缓存 cache
 
-def fib(n, cache=None): # 为什么这里的cache不能直接设置为 {}。因为需要递归啊。会产生一个变量缓存不变的问题
+def fibo(n, cache=None): # 为什么这里的cache不能直接设置为 {}。因为需要递归啊。会产生一个变量缓存不变的问题
     if cache is None:
         cache = {}
     if n in cache:
@@ -26,8 +26,14 @@ def fib(n, cache=None): # 为什么这里的cache不能直接设置为 {}。因�
     if n is 0 or n is 1:
         return 1
     else:
-        cache[n] = fib(n-2, cache) + fib(n-1, cache)
+        cache[n] = fibo(n-2, cache) + fibo(n-1, cache)
         return cache[n]
+
+def fibonacci(n):
+    a, b = 0, 1
+    while True and b < 100:
+        yield a     # 这里使用 生成器函数，实现懒计算
+        a, b = b, a + b
 
 
 ######################### 爬楼梯 #########################
