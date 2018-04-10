@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 """
-获取某个 RSS 的相关新闻 & 获取某地的天气；通过 index.html 展现出来
+获取某个 RSS 的相关新闻 & 获取某地的天气；通过 index.html 展现出来gti
 """
 
 import datetime
