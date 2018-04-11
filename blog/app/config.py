@@ -4,3 +4,5 @@ DEBUG = True
 SECRET_KEY = 'this is my secret key!'
 SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://root:123456@localhost/emdp'
 SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+INDEX_TEMPLATE = 'index.html'

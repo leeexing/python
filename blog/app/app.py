@@ -2,6 +2,7 @@
 my blog
 '''
 from flask import Flask, render_template, redirect, url_for, flash, request, session, g
+from flask import current_app
 from flask_bootstrap import Bootstrap
 from db import get_mongo_connection
 import os
@@ -12,11 +13,11 @@ app.config.from_object('config')
 app.config.from_pyfile('config.py')
 print(app.config['DEBUG'])
 print(app.config['SECRET_KEY'])
-print(app.config['MONGO_URI'])
+print(app.config['MONGO_DBNAME'])
 
 bootstrap = Bootstrap(app)
-db = get_mongo_connection().user
-
+mongo = get_mongo_connection()
+db = mongo.myblog
 
 
 # app.config['SECRET_KEY'] = os.urandom(24)
@@ -40,7 +41,7 @@ def my_before_request():
 @app.route('/')
 def index():
     username = session.get('username')
-    return render_template('index.html', username=username)
+    return render_template(current_app.config['INDEX_TEMPLATE'], username=username)
 
 @app.route('/get')
 def get_user():
@@ -60,7 +61,7 @@ def register():
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
-        user_isexist = db.user_db.find_one({'username': username})
+        user_isexist = db.users.find_one({'username': username})
         if user_isexist:
             flash('该用户名已被注册，请换一个用户名注册！')
             return render_template('login/register.html')
@@ -71,7 +72,7 @@ def register():
                 'isAdmin': False
             }
             session['username'] = username
-            db.user_db.insert(new_user)
+            db.users.insert(new_user)
             return redirect(url_for('login'))
     else:
         return render_template('login/register.html')
@@ -84,7 +85,8 @@ def login():
         password = request.form.get('password')
         remember_me = request.form.get('rememberme') == 'on'
         print(remember_me)
-        login_user = db.user_db.find_one({'username': username, 'password': password})
+        print(list(db.users.find({})))
+        login_user = db.users.find_one({'username': username, 'password': password})
         print(login_user)
         if remember_me:
             session.permanent = True
