@@ -4,6 +4,7 @@ my blog
 from flask import Flask, render_template, redirect, url_for, flash, request, session, g
 from flask import current_app
 from flask_bootstrap import Bootstrap
+from flask_restful import Api, Resource
 from db import get_mongo_connection
 import os
 from datetime import timedelta
@@ -16,6 +17,9 @@ print(app.config['SECRET_KEY'])
 print(app.config['MONGO_DBNAME'])
 
 bootstrap = Bootstrap(app)
+api = Api(app)
+todos = {}
+
 mongo = get_mongo_connection()
 db = mongo.myblog
 
@@ -25,6 +29,18 @@ db = mongo.myblog
 # app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=1)
 # session.permanent = True
 
+class TodoSimple(Resource):
+    def get(self, todo_id):
+        return {todo_id: todos[todo_id]}
+
+    def put(self, todo_id):
+        if todo_id not in todos:
+            todos[todo_id] = request.form['data']
+        return {todo_id: todos[todo_id]}
+
+api.add_resource(TodoSimple, '/<string:todo_id>', '/todo/<string:todo_id>')
+
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
@@ -33,10 +49,10 @@ def page_not_found(e):
 def internal_server_error(e):
     return render_template('500.html'), 500
 
-@app.before_request
-def my_before_request():
-    if not session.get('username') and request.endpoint not in ('login', 'register', 'static'):
-        return redirect(url_for('login'))
+# @app.before_request
+# def my_before_request():
+#     if not session.get('username') and request.endpoint not in ('login', 'register', 'static'):
+#         return redirect(url_for('login'))
 
 @app.route('/')
 def index():

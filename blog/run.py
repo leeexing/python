@@ -1,7 +1,10 @@
 # -*- coding:utf-8 -*-
 from app import app
+from test.demo import Foo
 
-app.config.from_object('config')
+print(Foo.age)
 
-if __name__ == '__main__':
-    app.run()
+# app.config.from_object('config')
+
+# if __name__ == '__main__':
+#     app.run()
