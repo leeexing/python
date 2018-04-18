@@ -112,6 +112,41 @@ myproject
 
 ## 具体每个模块的组织关联
 
+manage.py 作为程序的入口，一般都是先把 app 导入进来，再通过 flask_script 进行管理，添加一些指令，实现精细化的控制
+
+```py manage.py
+"""程序入口"""
+from flask_script import Manager, Server, Command
+from app import create_app
+
+app = create_app() # 返回一个 Flask 实例
+manager = Manager(app) # 得到一个拥有控制app的管理器
+
+#自定义命令一：
+manager.add_command('runapi', Server(host='0.0.0.0', post=5001, use_debugger=True))
+
+#自定义命令二：
+class Hello(Command):
+    """hello world"""
+    def run(self):
+        print('hello world')
+
+manager.add_command('init', init())
+
+🏑🏑🏑🏑🏑🏑🏑🏑🏑🏑🏑🏑🏑🏑🏑🏑🏑🏑🏑
+# 另外的一种写法是这样的.
+# 使用Command实例的@command修饰符
+@manager.command
+def init():
+    print('init app ...')
+    manager.run()
+
+# 如何调用
+python manger.py runapi #
+python manager.py init  # 输出 > init app ...
+
+```
+
 ```py __ini__.py main.py
 # 主应用模块
 
@@ -198,7 +233,7 @@ class Equipments(Resource):
   )
   def get(self):  # get就是表示接口是通过 ‘GET’ 方法发起请求的
     args = EUIPMENT_PARSER.parse_args()   # 通过flask——restful 自带的方法获取参数
-    // 也可以通过 args = request.args; request.args.get('eqp_id')
+    # 也可以通过 args = request.args; request.args.get('eqp_id')
     result = self.equipment_manager.find_equipment(args)
     return result
 ```

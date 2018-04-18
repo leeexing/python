@@ -13,16 +13,28 @@ ANGRY_ASCII ="""
      YOU SHOULDN'T BE HERE
 """
 
-import threading
+from enum import Enum
 
-def run(number)
-
-
+class EnumUserType(Enum):
+    admin = 'leeing'
+    common = 2
+    red = 1
+    green = 2
+    blue = 3
+    white = 3
+    yellow = 8
 
 def foo(*args):
-    with open('./test.txt', 'r') as f:
-        data = f.read()
-        print(data)
+    print(EnumUserType['red'])
+    print(EnumUserType['white'])
+    print('*'*10)
+    print(EnumUserType(8))
+    print(EnumUserType['admin'])
+    print(EnumUserType('leeing'))
+    print(EnumUserType['white'].name)
+    print(EnumUserType['white'].value)
+    for item in EnumUserType:
+        print(item.name, item.value)
 
 def main():
     foo()
