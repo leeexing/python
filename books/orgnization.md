@@ -231,6 +231,8 @@ class Equipments(Resource):
       {'name':'location', 'dateType':'string', 'paramType':'query'}
     ]
   )
+  // TODO:
+  // FIXME:
   def get(self):  # get就是表示接口是通过 ‘GET’ 方法发起请求的
     args = EUIPMENT_PARSER.parse_args()   # 通过flask——restful 自带的方法获取参数
     # 也可以通过 args = request.args; request.args.get('eqp_id')
