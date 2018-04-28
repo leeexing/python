@@ -12,13 +12,14 @@ q = Auth(access_key, secret_key)
 bucket_name = 'python'
 
 #上传到七牛后保存的文件名
-key = 'my-python-logo.png';
+key = 'my-flask-logo.png';
 
 #生成上传 Token，可以指定过期时间等
 token = q.upload_token(bucket_name, key, 3600)
+print(token)
 
 #要上传文件的本地路径
-localfile = r'E:/Leeing/python/python/show-me-code/_assets/images/weixin_avatar2.png'
+localfile = r'E:/Leeing/python/python/show-me-code/_assets/images/weixin_avatar1.png'
 ret, info = put_file(token, key, localfile)
 print(info)
 
