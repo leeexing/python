@@ -3,9 +3,13 @@ from flask_restplus import Api, Resource, fields
 
 api_v1 = Blueprint('api', __name__, url_prefix='/api/1')
 
-api = Api(api_v1, version='1.0', title='Todo API',
+api = Api(version='1.0', title='Todo API',
     description='A simple TODO API',
 )
+# !这种写法好像不支持了！！！什么情况不知道
+# api = Api(api_v1, version='1.0', title='Todo API',
+#     description='A simple TODO API',
+# )
 
 ns = api.namespace('todos', description='TODO operations')
 
@@ -81,5 +85,7 @@ class TodoList(Resource):
 
 if __name__ == '__main__':
     app = Flask(__name__)
-    app.register_blueprint(api_v1)
-    app.run(debug=True, port=5001)
+    # api.add_namespace(ns)
+    # app.register_blueprint(api_v1)
+    api.init_app(app)
+    app.run(debug=True, port=5002)

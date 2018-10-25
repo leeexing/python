@@ -21,6 +21,7 @@ class UserListApi(Resource):
     users = [User("HanMeiMei"), User("LiLei")]
 
     @ns.doc('get_user_list')
+    @api.doc(responses={403: 'Not Authorized'})
     @ns.marshal_with(user_list_model)
     def get(self):
         return {
