@@ -1,7 +1,7 @@
 from flask_restplus import fields, Namespace, Resource
 
 from app.models import Book
-from app.api import api
+from ._api import api
 
 ns = Namespace('books', description='Books 增删改查 .')
 
