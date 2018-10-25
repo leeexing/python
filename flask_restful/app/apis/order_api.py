@@ -1,8 +1,8 @@
 from flask_restplus import Resource, fields, Namespace
 
 from app.models import Order, Book, User
-from app.apis.user_api import user_model
-from app.apis.book_api import book_model
+from .user_api import user_model
+from .book_api import book_model
 
 ns = Namespace("order", description="Order 增删改查 api.")
 

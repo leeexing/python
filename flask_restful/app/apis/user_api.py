@@ -1,7 +1,7 @@
 from flask_restplus import Resource, fields, Namespace
 
 from app.models import User
-# from app.api import api
+from ._api import api
 
 ns = Namespace('users', description='Users .')
 
@@ -32,34 +32,34 @@ class UserListApi(Resource):
     @ns.expect(user_model)
     @ns.marshal_with(user_model, code=201)
     def post(self):
-        # user = User(api.payload['username'])
+        user = User(api.payload['username'])
         return 89
 
 
-# @ns.route("/<string:user_id>")
-# @ns.response(404, 'User not found')
-# @ns.param('user_id', 'The user identifier')
-# class UserInfoApi(Resource):
-#     users = [User("HanMeiMei"), User("LiLei")]
-#     print([u.user_id for u in users], '++++')
+@ns.route("/<string:user_id>")
+@ns.response(404, 'User not found')
+@ns.param('user_id', 'The user identifier')
+class UserInfoApi(Resource):
+    users = [User("HanMeiMei"), User("LiLei")]
+    print([u.user_id for u in users], '++++')
 
-#     @ns.doc("get_user_by_id")
-#     @ns.marshal_with(user_model)
-#     def get(self, user_id):
-#         for u in self.users:
-#             if u.user_id == user_id:
-#                 return u
-#         ns.abort(404, "User {} doesn't exist".format(user_id))
+    @ns.doc("get_user_by_id")
+    @ns.marshal_with(user_model)
+    def get(self, user_id):
+        for u in self.users:
+            if u.user_id == user_id:
+                return u
+        ns.abort(404, "User {} doesn't exist".format(user_id))
 
-#     @ns.doc("update_user_info")
-#     @ns.expect(user_model)
-#     @ns.marshal_with(user_model)
-#     def put(self, user_id):
-#         user = None
-#         for u in self.users:
-#             if u.user_id == user_id:
-#                 user = u
-#         if not user:
-#             ns.abort(404, "User {} doesn't exist".format(user_id))
-#         user.username = api.payload['username']
-#         return user
+    @ns.doc("update_user_info")
+    @ns.expect(user_model)
+    @ns.marshal_with(user_model)
+    def put(self, user_id):
+        user = None
+        for u in self.users:
+            if u.user_id == user_id:
+                user = u
+        if not user:
+            ns.abort(404, "User {} doesn't exist".format(user_id))
+        user.username = api.payload['username']
+        return user
