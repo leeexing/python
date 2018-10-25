@@ -33,7 +33,7 @@ class UserListApi(Resource):
     @ns.marshal_with(user_model, code=201)
     def post(self):
         user = User(api.payload['username'])
-        return 89
+        return user
 
 
 @ns.route("/<string:user_id>")
